@@ -1,12 +1,10 @@
 import './App.css';
+import CXchange from './components/CXchange'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      app
-      </header>
+    <div className="app">
+      <CXchange />
     </div>
   );
 }

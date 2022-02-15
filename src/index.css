@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;400&family=Source+Code+Pro:wght@300;400&display=swap');
+
 :root {
     --color-purple: #2f3350;
     --color-blue: #1565c0;
@@ -6,7 +8,7 @@
     --color-yellow: #ded010;
     --color-text: #333;
 
-    --fontone: 'Be Vietnam', sans-serif;
+    --fontone: 'Be Vietnam Pro', sans-serif;
     --fontcode: 'Source Code Pro', monospace;
 
 }
