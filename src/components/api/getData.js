@@ -24,7 +24,7 @@ export async function fetch(url) {
       }
     }
   }
- 
+
 }
 
 
@@ -34,15 +34,3 @@ export async function fetch(url) {
 
 
 
-
-
-
-// return {
-//   // simulate JSON response
-//   async json() {
-//     return {
-//       success: true,
-//       rates,
-//     };
-//   },
-// };

@@ -5,12 +5,12 @@ import DataTable from '../components/Table'
 import { getExchangeRates } from "./api/api";
 
 
-const allCurrencies = ["USD","EUR","GBP","JPY"];
+const allCurrencies = ["USD", "EUR", "GBP", "JPY"];
 
 const CXchange = () => {
-    const [fiat,setFiat] = useState("USD");
+    const [fiat, setFiat] = useState("USD");
     const [fiatAmt, setFiatAmt] = useState(1);
-    const [data, setData] = useState({USD: 1});
+    const [data, setData] = useState({ USD: 1 });
 
     useEffect(() => {
         getExchangeRates(fiat, allCurrencies).then((rates) => {
@@ -20,12 +20,12 @@ const CXchange = () => {
 
     const handleFiatChange = useCallback((e) => {
         setFiat(e.target.value)
-    },[])
+    }, [])
 
     const handleFiatAmount = useCallback((e) => {
-       let amount = e.target.value;
-       setFiatAmt(amount)
-    },[])
+        let amount = e.target.value;
+        setFiatAmt(amount)
+    }, [])
 
     return (
         <section>
@@ -41,11 +41,11 @@ const CXchange = () => {
             </div>
 
             <div className="data-table">
-               <DataTable data={data} fiatAmt={fiatAmt}
-               />
+                <DataTable data={data} fiatAmt={fiatAmt}
+                />
             </div>
 
-    
+
         </section>
     )
 

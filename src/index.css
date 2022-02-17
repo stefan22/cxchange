@@ -2,11 +2,13 @@
 
 :root {
     --color-purple: #2f3350;
-    --color-blue: #1565c0;
-    --color-white: #ffffff;
-    --color-red: #b02020;
+    --color-blue: #487fa4;
+    --color-white: #ffebee;
+    --color-red: #ff5722;
     --color-yellow: #ded010;
+    --color-lime: #cddc39;
     --color-text: #333;
+    --color-black: #2b2b2b;
     --color-gray: #666;
 
     --fontone: 'Be Vietnam Pro', sans-serif;

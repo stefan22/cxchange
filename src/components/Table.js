@@ -4,15 +4,17 @@ const DataTable = ({data,fiatAmt}) => {
         <table className="crypto-table">
             <tbody>
                 {
-                    Object.entries(data).map(([code,rate]) => {
+                    Object.entries(data).map(([crcy,rate]) => {
+                        console.log('1 ',data)
                         const xamt = fiatAmt * rate || 0.0;
+                        console.log(crcy,rate);
                         return (
-                            <tr key={code}>
-                                <td>{code}</td>
+                            <tr key={crcy}>
+                                <td>{crcy}</td>
                                 <td>
                                     {xamt.toLocaleString("en", {
                                     style: "currency",
-                                    currency: code,
+                                    currency: crcy,
                                     })}
                                 </td>
                             </tr>
