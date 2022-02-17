@@ -29,18 +29,25 @@ const CXchange = () => {
 
     return (
         <section>
-            <h1>CXchange</h1>
-            <FiatSelect
-                onChange={handleFiatChange}
-                allCurrencies={allCurrencies}
-                fiat={fiat}
-            />
+            <h1>CXchange App</h1>
+            <label>Currency:
+                <FiatSelect
+                    onChange={handleFiatChange}
+                    allCurrencies={allCurrencies}
+                    fiat={fiat}
+                />
+            </label>
+
+            <br />
+
 
             <div className="fiat-amount">
                 <AmountField fiatAmt={fiatAmt} onChange={handleFiatAmount} />
             </div>
 
+
             <div className="data-table">
+                <h2>Exchange Rates</h2>
                 <DataTable data={data} fiatAmt={fiatAmt}
                 />
             </div>
