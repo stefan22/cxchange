@@ -1,28 +1,51 @@
 import { useState, useCallback, useEffect } from "react";
-import CryptoSelect from '../components/CryptoSelect'
+import FiatSelect from '../components/FiatSelect'
+import AmountField from '../components/AmountField'
+import DataTable from '../components/Table'
+import { getExchangeRates } from "./api/api";
 
 
-const allCryptos = ["USD","EUR","CAD","GBP","MXN"];
+const allCurrencies = ["USD","EUR","GBP","JPY"];
 
 const CXchange = () => {
-    const [crypto,setCrypto] = useState("USD");
-    const [cryptoAmt, setCryptoAmt] = useState(0);
+    const [fiat,setFiat] = useState("USD");
+    const [fiatAmt, setFiatAmt] = useState(1);
+    const [data, setData] = useState({USD: 1});
 
-    const handleCryptoChange = useCallback((e) => {
-        setCrypto(e.target.value)
+    useEffect(() => {
+        getExchangeRates(fiat, allCurrencies).then((rates) => {
+            setData(rates);
+        })
     })
+
+    const handleFiatChange = useCallback((e) => {
+        setFiat(e.target.value)
+    },[])
+
+    const handleFiatAmount = useCallback((e) => {
+       let amount = e.target.value;
+       setFiatAmt(amount)
+    },[])
 
     return (
         <section>
             <h1>CXchange</h1>
-            <CryptoSelect
-                onChange={handleCryptoChange}
-                allCryptos={allCryptos}
-                crypto={crypto}
+            <FiatSelect
+                onChange={handleFiatChange}
+                allCurrencies={allCurrencies}
+                fiat={fiat}
             />
 
-           
+            <div className="fiat-amount">
+                <AmountField fiatAmt={fiatAmt} onChange={handleFiatAmount} />
+            </div>
 
+            <div className="data-table">
+               <DataTable data={data} fiatAmt={fiatAmt}
+               />
+            </div>
+
+    
         </section>
     )
 

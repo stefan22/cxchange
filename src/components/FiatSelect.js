@@ -1,16 +1,16 @@
-const CryptoSelect = (
+const FiatSelect = (
     {
-        allCryptos,
-        crypto,
+        allCurrencies,
+        fiat,
         onChange,
     
     }) => {
     
 
     return (
-        <select className="select-crypto" value={crypto} onChange={onChange}>
+        <select className="select-fiat" value={fiat} onChange={onChange}>
             {
-                allCryptos.map((code) => (
+                allCurrencies.map((code) => (
                     <option key={code} value={code}>
                         {code}
                     </option>
@@ -22,4 +22,4 @@ const CryptoSelect = (
 }
 
 
-export default CryptoSelect
+export default FiatSelect
