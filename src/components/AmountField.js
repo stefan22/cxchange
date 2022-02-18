@@ -7,8 +7,9 @@ const AmountField = (
 
     return (
         <form className="form-section">
-           <label>Amount:</label>
+           <label htmlFor="fiat">Amount:</label>
             <input
+                id="fiat"
                 type="number"
                 value={fiatAmt}
                 onChange={onChange}
