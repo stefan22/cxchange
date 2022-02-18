@@ -1,6 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 import FiatSelect from '../components/FiatSelect'
 import AmountField from '../components/AmountField'
+import { useSelector } from "react-redux";
 import DataTable from '../components/Table'
 import { getExchangeRates } from "./api/api";
 
@@ -8,31 +9,23 @@ import { getExchangeRates } from "./api/api";
 const allCurrencies = ["USD", "EUR", "GBP", "JPY"];
 
 const CXchange = () => {
-    const [fiat, setFiat] = useState("USD");
-    const [fiatAmt, setFiatAmt] = useState(1);
+
+    const fiatAmt = useSelector((state) => state.fiatAmt);
+    const fiat = useSelector((state) => state.fiat)
+
     const [data, setData] = useState({ USD: 1 });
 
     useEffect(() => {
         getExchangeRates(fiat, allCurrencies).then((rates) => {
             setData(rates);
         })
-    })
-
-    const handleFiatChange = useCallback((e) => {
-        setFiat(e.target.value)
-    }, [])
-
-    const handleFiatAmount = useCallback((e) => {
-        let amount = e.target.value;
-        setFiatAmt(amount)
-    }, [])
+    },[fiat])
 
     return (
         <section>
             <h1>CXchange App</h1>
             <label>Currency:
                 <FiatSelect
-                    onChange={handleFiatChange}
                     allCurrencies={allCurrencies}
                     fiat={fiat}
                 />
@@ -42,7 +35,7 @@ const CXchange = () => {
 
 
             <div className="fiat-amount">
-                <AmountField fiatAmt={fiatAmt} onChange={handleFiatAmount} />
+                <AmountField fiatAmt={fiatAmt} />
             </div>
 
 

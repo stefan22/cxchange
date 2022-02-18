@@ -1,9 +1,10 @@
+import { useDispatch } from "react-redux";
 
-const AmountField = (
-    {
-        fiatAmt,
-        onChange
-    }) => {
+const AmountField = ({fiatAmt}) => {
+    const dispatch = useDispatch();
+    function onChange(e) {
+        dispatch({type:'amountUpdate', payload: e.target.value})
+    }
 
     return (
         <form className="form-section">
@@ -12,7 +13,6 @@ const AmountField = (
                 type="number"
                 value={fiatAmt}
                 onChange={onChange}
-
             />
         
 
