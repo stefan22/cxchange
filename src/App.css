@@ -26,11 +26,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(
     to bottom,
-    rgb(124, 171, 214),
-    rgb(73, 167, 211)
-  );
-  background-image: linear-gradient(
-    to bottom,
     rgb(218 235 251),
     rgb(196 233 255)
   );
@@ -48,7 +43,7 @@ h1 {
   font-size: var(--heading-1);
   font-feature-settings: "smcp";
   font-variant: small-caps;
-  color: #395266;
+  color: var(--color-primary);
 }
 
 h2 {
@@ -75,7 +70,7 @@ section.wrapper {
 .app section label {
   display: flex;
   flex-direction: column;
-  color: dimgray;
+  color: var(--color-gray);
   width: 100%;
   font-size: 1.25rem;
   font-variant: all-small-caps;
@@ -90,7 +85,7 @@ section.wrapper {
 
 .data-table {
   margin: 3rem 0;
-  background: #354a5c;
+  background: var(--color-darkblue);
   border-radius: 5px;
   border: none;
   min-height: 396px;
@@ -116,15 +111,15 @@ select {
   align-items: center;
   position: relative;
   height: 42px;
-  color: #e4ebee;
+  color: var(--color-white);
   letter-spacing: .5px;
   width: 67px;
   font-size: 0.87rem;
-  border: 1px solid #407298;
+  border: 1px solid var(--color-border);
   border-radius: 0.5em;
   padding: 12px 3px;
   cursor: pointer;
-  background: #3f79a6;
+  background: var(--color-lightblue);
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
@@ -142,7 +137,7 @@ form {
   line-height: 2.5;
   vertical-align: middle;
   text-align: right;
-  border-bottom: 1px dotted #7a859a;
+  border-bottom: 1px dotted var(--color-bluegray);
 }
 
 .form-section input {
@@ -191,12 +186,12 @@ input[type=number] {
 }
 
 .crypto-table tr {
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid var(--color-bluegray);
   display: flex;
   margin: 0 auto;
   padding: 10px 0;
   width: fit-content;
-  background: #354a5c;
+  background: var(--color-darkblue);
  
 }
 

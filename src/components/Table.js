@@ -27,12 +27,10 @@ const DataTable = ({ data, fiatAmt }) => {
           textAlign: 'center',
           fontSize: '1.5rem',
           padding: '0.5rem 0 1rem',
-          display: 'flex',
-          flexDirection: 'column',
           color: '#fafafa',
         }}
       >
-        Currency Exchange Rate
+        Currency <span style={{ color: '#3f79a6' }}>Exchange</span> Rate
       </p>
     </>
   );
