@@ -1,4 +1,4 @@
-import data from "./data.json";
+import data from './data.json';
 
 /* 
   Off data:  
@@ -10,9 +10,9 @@ import data from "./data.json";
 const simulate = (time) => new Promise((res) => setTimeout(res, time));
 
 export async function fetch(url) {
-  const search = url.split("?")[1];
+  const search = url.split('?')[1];
   const params = new URLSearchParams(search);
-  const base = params.get("base");
+  const base = params.get('base');
   const rates = data[base];
 
   await simulate(400);
@@ -20,17 +20,8 @@ export async function fetch(url) {
     //response body not read yet
     async json() {
       return {
-        rates
-      }
-    }
-  }
-
+        rates,
+      };
+    },
+  };
 }
-
-
-
-
-
-
-
-

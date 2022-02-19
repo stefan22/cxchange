@@ -1,12 +1,12 @@
-
 //mock rate data
-import { fetch } from "./getData";
-
+import { fetch } from './getData';
 
 // helper API call
 export function getExchangeRates(base, supportedCurrencies) {
   //exclude base
-  const symbols = supportedCurrencies.filter((symbol) => symbol !== base).join();
+  const symbols = supportedCurrencies
+    .filter((symbol) => symbol !== base)
+    .join();
   //url
   const url = `localhost:3000/?base=${base}&symbols=${symbols}`;
   return fetch(url)
@@ -17,4 +17,3 @@ export function getExchangeRates(base, supportedCurrencies) {
       return dataRates;
     });
 }
-

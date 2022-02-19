@@ -1,5 +1,6 @@
-import './App.css';
-import CXchange from './components/CXchange'
+import React from 'react';
+import './app.css';
+import CXchange from './components/CXchange';
 
 function App() {
   return (

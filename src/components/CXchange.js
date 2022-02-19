@@ -1,55 +1,43 @@
-import { useState, useEffect } from "react";
-import FiatSelect from '../components/FiatSelect'
-import AmountField from '../components/AmountField'
-import { useSelector } from "react-redux";
-import DataTable from '../components/Table'
-import { getExchangeRates } from "./api/api";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import FiatSelect from '../components/FiatSelect';
+import AmountField from '../components/AmountField';
+import { useSelector } from 'react-redux';
+import DataTable from '../components/Table';
+import { getExchangeRates } from './api/api';
 
-
-const allCurrencies = ["USD", "EUR", "GBP", "JPY"];
+const allCurrencies = ['USD', 'EUR', 'GBP', 'JPY'];
 
 const CXchange = () => {
+  const fiatAmt = useSelector((state) => state.fiatAmt);
+  const fiat = useSelector((state) => state.fiat);
 
-    const fiatAmt = useSelector((state) => state.fiatAmt);
-    const fiat = useSelector((state) => state.fiat)
+  const [data, setData] = useState({ USD: 1 });
 
-    const [data, setData] = useState({ USD: 1 });
+  useEffect(() => {
+    getExchangeRates(fiat, allCurrencies).then((rates) => {
+      setData(rates);
+    });
+  }, [fiat]);
 
-    useEffect(() => {
-        getExchangeRates(fiat, allCurrencies).then((rates) => {
-            setData(rates);
-        })
-    },[fiat])
+  return (
+    <section className="wrapper">
+      <header>
+        <h1>CXchange</h1>
+        <FiatSelect allCurrencies={allCurrencies} fiat={fiat} />
+      </header>
 
-    return (
-        <section>
-            <h1>CXchange App</h1>
-            <label>Currency:
-                <FiatSelect
-                    allCurrencies={allCurrencies}
-                    fiat={fiat}
-                />
-            </label>
+      <br />
 
-            <br />
+      <div className="fiat-amount">
+        <AmountField fiatAmt={fiatAmt} />
+      </div>
 
-
-            <div className="fiat-amount">
-                <AmountField fiatAmt={fiatAmt} />
-            </div>
-
-
-            <div className="data-table">
-                <h2>Exchange Rates</h2>
-                <DataTable data={data} fiatAmt={fiatAmt}
-                />
-            </div>
-
-
-        </section>
-    )
-
-}
-
+      <div className="data-table">
+        <DataTable data={data} fiatAmt={fiatAmt} />
+      </div>
+    </section>
+  );
+};
 
 export default CXchange;
