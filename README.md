@@ -33,6 +33,8 @@ A currency exchange calculator app with React Hooks 🤑  💰
 <h3>Screenshot</h3>
 
 Simple currency exchange calculator with Hooks.
+Enter an amount and/ or pick one out of the four different currencies avail within the dropdown menu to 
+calculate their exchange rate on real-time.
 
 ![currency calculator](src/assets/cxchange-p1.png)
 
