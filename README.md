@@ -20,3 +20,9 @@ A currency exchange calculator app with React Hooks 🤑  💰
 ```js
 - Type `npm start`
 ```
+
+<br />
+
+<h2>Branches &nbsp; :octocat:</h2>
+
+<p> • <b>WithRedux</b>: &nbsp; Applying Redux to React Hooks Main branch  </p>
