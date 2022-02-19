@@ -1,0 +1,42 @@
+{
+  "root": true,
+
+  "extends": ["plugin:react/recommended", "plugin:prettier/recommended"],
+  "plugins": ["react", "jsx-a11y"],
+
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+ 
+  "rules": {
+    "react/prop-types": 0,
+    "no-lone-blocks": 1,
+    "no-mixed-spaces-and-tabs": 0,
+    "no-unused-vars": "error",
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/no-unescaped-entities": 0,
+    "react/jsx-no-target-blank": 0,
+    "no-param-reassign": 1,
+    "no-unreachable-loop": 1,
+    "no-console":"warn"
+  },
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
