@@ -41,7 +41,7 @@ h1 {
   text-align: center;
   margin: 0 0.5rem;
   font-size: var(--heading-1);
-  font-feature-settings: "smcp";
+  font-feature-settings: 'smcp';
   font-variant: small-caps;
   color: var(--color-primary);
 }
@@ -64,7 +64,6 @@ section.wrapper {
   max-width: 625px;
   overflow: scroll;
   padding: 0 1.25rem;
-  
 }
 
 .app section label {
@@ -89,9 +88,9 @@ section.wrapper {
   border-radius: 5px;
   border: none;
   min-height: 396px;
-  box-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 12%), 0 1px 8px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 12%),
+    0 1px 8px 0 rgb(0 0 0 / 20%);
 }
-
 
 header {
   display: flex;
@@ -102,8 +101,6 @@ header {
   line-height: 50px;
 }
 
-
-
 select {
   margin: 0.35rem 0.5rem 0.35rem 0.5rem;
   display: grid;
@@ -112,7 +109,7 @@ select {
   position: relative;
   height: 42px;
   color: var(--color-white);
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   width: 67px;
   font-size: 0.87rem;
   border: 1px solid var(--color-border);
@@ -120,14 +117,13 @@ select {
   padding: 12px 3px;
   cursor: pointer;
   background: var(--color-lightblue);
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
+    0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
 select:focus {
   outline: none;
 }
-
-
 
 form {
   display: flex;
@@ -167,10 +163,9 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
-
 
 .crypto-table {
   display: flex;
@@ -182,7 +177,6 @@ input[type=number] {
   border: none;
   height: 35vh;
   min-height: 340px;
-
 }
 
 .crypto-table tr {
@@ -192,7 +186,6 @@ input[type=number] {
   padding: 10px 0;
   width: fit-content;
   background: var(--color-darkblue);
- 
 }
 
 .crypto-table tr td {
@@ -210,5 +203,4 @@ input[type=number] {
   margin-left: 2rem;
   text-align: right;
   display: flex;
-  
 }
