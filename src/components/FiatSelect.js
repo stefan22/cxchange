@@ -1,25 +1,15 @@
-const FiatSelect = (
-    {
-        allCurrencies,
-        fiat,
-        onChange,
-    
-    }) => {
-    
+import React from 'react';
 
-    return (
-        <select className="select-fiat" value={fiat} onChange={onChange}>
-            {
-                allCurrencies.map((code) => (
-                    <option key={code} value={code}>
-                        {code}
-                    </option>
+const FiatSelect = ({ allCurrencies, fiat, onChange }) => {
+  return (
+    <select className="select-fiat" value={fiat} onChange={onChange}>
+      {allCurrencies.map((code) => (
+        <option key={code} value={code}>
+          {code}
+        </option>
+      ))}
+    </select>
+  );
+};
 
-            ))}
-
-        </select>
-    )
-}
-
-
-export default FiatSelect
+export default FiatSelect;
