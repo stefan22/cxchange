@@ -3,7 +3,7 @@
 <h1 align="center">CXchange</h1> 
 
 ```js
-WithRedux branch &nbsp; :pill:
+WithRedux branch 
 ```
 
 A simple currency exchange calculator app with React Hooks 🤑  💰     
