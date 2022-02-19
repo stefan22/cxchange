@@ -26,3 +26,23 @@ A currency exchange calculator app with React Hooks 🤑  💰
 <h2>Branches &nbsp; :octocat:</h2>
 
 <p> • <b>WithRedux</b>: &nbsp; Applying Redux to React Hooks Main branch  </p>
+
+
+
+
+<h3>Screenshot</h3>
+
+Simple currency exchange calculator with Hooks.
+
+![currency calculator](src/assets/cxchange-p1.png)
+
+
+
+
+
+
+
+
+
+
+
