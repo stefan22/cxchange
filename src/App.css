@@ -4,17 +4,19 @@ body {
   margin: 0;
 }
 
-
-
 *,
 ::after,
 ::before {
   box-sizing: border-box;
 }
 
+p {
+  line-height: 1.35;
+}
+
 body {
   font-family: var(--fontone);
-  color:  var(--color-text);
+  color: var(--color-text);
   font-family: sans-serif;
   margin: 0;
   padding: 0;
@@ -27,16 +29,26 @@ body {
     rgb(124, 171, 214),
     rgb(73, 167, 211)
   );
+  background-image: linear-gradient(
+    to bottom,
+    rgb(218 235 251),
+    rgb(196 233 255)
+  );
   background-attachment: fixed;
 }
 
 header {
   color: var(--color-text);
+  margin: 7rem 0;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 0 0.5rem;
+  font-size: var(--heading-1);
+  font-feature-settings: "smcp";
+  font-variant: small-caps;
+  color: #395266;
 }
 
 h2 {
@@ -48,61 +60,144 @@ h2 {
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
+  height: 100vh;
+  margin-bottom: 3rem;
 }
 
-.app section {
-  width: 275px;
+section.wrapper {
+  width: 100%;
+  max-width: 625px;
+  overflow: scroll;
+  padding: 0 1.25rem;
+  
 }
 
 .app section label {
   display: flex;
   flex-direction: column;
+  color: dimgray;
   width: 100%;
+  font-size: 1.25rem;
+  font-variant: all-small-caps;
+}
 
+.form-section label::after {
+  /* content: '.00'; */
+  display: inline-block;
+  position: absolute;
+  right: 46.25%;
 }
 
 .data-table {
   margin: 3rem 0;
+  background: #354a5c;
+  border-radius: 5px;
+  border: none;
+  min-height: 396px;
+  box-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%), 0 3px 3px -2px rgb(0 0 0 / 12%), 0 1px 8px 0 rgb(0 0 0 / 20%);
 }
 
-.select-fiat {
-  margin: 10px 0 0 0;
-  padding: 7px 15px;
-  width: 190px;
-  font-size: 0.9rem;
-  border-radius: 5px;
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 50px;
+}
+
+
+
+select {
+  margin: 0.35rem 0.5rem 0.35rem 0.5rem;
+  display: grid;
+  grid-template-areas: 'select';
+  align-items: center;
+  position: relative;
+  height: 42px;
+  color: #e4ebee;
+  letter-spacing: .5px;
+  width: 67px;
+  font-size: 0.87rem;
+  border: 1px solid #407298;
+  border-radius: 0.5em;
+  padding: 12px 3px;
   cursor: pointer;
+  background: #3f79a6;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+select:focus {
+  outline: none;
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 50px;
+  line-height: 2.5;
+  vertical-align: middle;
+  text-align: right;
+  border-bottom: 1px dotted #7a859a;
 }
 
 .form-section input {
   margin: 10px 0 10px 0;
   width: 100%;
   border-radius: 5px;
-  border: 1px solid var(--color-purple);
   justify-content: center;
   display: flex;
   padding: 10px 15px;
+  border: none;
+  background: transparent;
+  font-size: 2rem;
 }
 
+.form-section input:focus {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 .crypto-table {
-  border: 1px dashed var(--color-text);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
   border-radius: 5px;
-  background-color: var(--color-blue);
-  padding: 1.5rem 0;
+  padding: 2rem 0;
+  border: none;
+  height: 35vh;
+  min-height: 340px;
+
 }
 
 .crypto-table tr {
-  border-bottom: 1px solid var(--color-text);
+  border-bottom: 1px solid #d0d0d0;
   display: flex;
   margin: 0 auto;
   padding: 10px 0;
   width: fit-content;
-  background: var(--color-red);
-  min-width: 200px;
+  background: #354a5c;
+ 
 }
 
 .crypto-table tr td {
@@ -113,7 +208,6 @@ h2 {
   width: 80px;
   font-weight: 500;
   color: var(--color-white);
- 
 }
 
 .crypto-table tr td:last-child {
@@ -121,5 +215,5 @@ h2 {
   margin-left: 2rem;
   text-align: right;
   display: flex;
-  color: var(--color-black);
+  
 }
