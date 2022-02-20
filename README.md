@@ -27,6 +27,8 @@ A currency exchange calculator app with React Hooks 🤑  💰
 
 <h2>Branches &nbsp; :octocat:</h2>
 
+
+<p> • <b>Main</b>: &nbsp; Currency Exchange Calculator with Hooks  </p>
 <p> • <b>WithRedux</b>: &nbsp; Applying Redux to React Hooks Main branch  </p>
 
 
