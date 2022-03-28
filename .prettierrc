@@ -1,5 +1,13 @@
 {
-  "singleQuote": true,
-  "trailingComma": "es5",
-  "semi": true
+  "semi": true,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "printWidth": 70,
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "arrowParens": "avoid",
+  "singleAttributePerLine": false,
+  "react/jsx-max-props-per-line": [1, "multiline"]
+
 }
